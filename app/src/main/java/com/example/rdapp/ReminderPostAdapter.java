@@ -63,7 +63,8 @@ public class ReminderPostAdapter extends FirebaseRecyclerAdapter<Paid, ReminderP
 
                         });
 
-                MonthPaid monthPaid = new MonthPaid(AccNo, Date, Month3, Amount);
+                MonthPaid monthPaid = new MonthPaid(getItem(i).getAccNo(), getItem(i).getDate(), getItem(i).getMonth3(), getItem(i).getAmount());
+                //MonthPaid monthPaid = new MonthPaid(AccNo, Date, Month3, Amount);
                 FirebaseDatabase.getInstance().getReference("month_paid")
                         .child(getRef(i).getKey())
                         .setValue(monthPaid)
